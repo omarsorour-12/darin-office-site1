@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مكتب دارين الخير للخدمات العامة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #2e8b57;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+    .container {
+      padding: 20px;
+    }
+    img {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 20px auto;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background-color: #e6f5ea;
+      margin: 10px 0;
+      padding: 10px;
+      border-right: 5px solid #2e8b57;
+      border-radius: 5px;
+    }
+    .contact, .booking {
+      background-color: #f0f0f0;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    a {
+      color: #2e8b57;
+      text-decoration: none;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #2e8b57;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    مكتب دارين الخير للخدمات العامة
+  </header>
+
+  <div class="container">
+    <img src="office.jpg" alt="صورة مكتب دارين الخير">
+
+    <h2>الخدمات المقدمة:</h2>
+    <ul>
+      <li>خدمات حكومية</li>
+      <li>تجديد إقامة</li>
+      <li>إصدار إقامة</li>
+      <li>خروج وعودة</li>
+      <li>نقل كفالة</li>
+      <li>تعديل مهنة</li>
+      <li>إصدار رخصة</li>
+      <li>إلغاء بلاغ هروب</li>
+      <li>جميع المعاملات الإلكترونية</li>
+    </ul>
+
+    <div class="contact">
+      <h3>معلومات التواصل:</h3>
+      <p>رقم الجوال: <a href="tel:0533508775">0533508775</a></p>
+      <p>واتساب: <a href="https://wa.me/966533508775" target="_blank">اضغط هنا للتواصل عبر واتساب</a></p>
+    </div>
+
+    <h3>موقع المكتب:</h3>
+    <p>
+      <a href="https://www.google.com/maps?q=GMVJ%2BRG8+المدينة+المنورة" target="_blank">
+        اضغط هنا لفتح الموقع في خرائط Google (GMVJ+RG8 المدينة المنورة)
+      </a>
+    </p>
+    <iframe
+      src="https://www.google.com/maps?q=GMVJ%2BRG8+المدينة+المنورة&output=embed"
+      allowfullscreen="" loading="lazy">
+    </iframe>
+
+    <div class="booking">
+      <h3>احجز موعد:</h3>
+      <form onsubmit="sendWhatsAppMessage(); return false;">
+        <input type="text" id="name" placeholder="الاسم" required />
+        <input type="text" id="service" placeholder="الخدمة المطلوبة" required />
+        <input type="text" id="time" placeholder="الوقت المناسب (اختياري)" />
+        <button type="submit">إرسال عبر واتساب</button>
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+    function sendWhatsAppMessage() {
+      const name = document.getElementById('name').value;
+      const service = document.getElementById('service').value;
+      const time = document.getElementById('time').value;
+      const msg = `السلام عليكم،\nأرغب في حجز موعد:\nالاسم: ${name}\nالخدمة: ${service}\nالوقت المناسب: ${time || 'لم يتم التحديد'}`;
+      const phone = "966533508775";
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
